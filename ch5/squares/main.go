@@ -9,8 +9,9 @@ package main
 import "fmt"
 
 //!+
-// squares returns a function that returns
+// squares returns a function that returns squares函数返回一个函数，后者包含下一次要用到数的平方
 // the next square number each time it is called.
+//函数变量不仅是代码，还可以拥有状态。go的函数变量就是闭包
 func squares() func() int {
 	var x int
 	return func() int {

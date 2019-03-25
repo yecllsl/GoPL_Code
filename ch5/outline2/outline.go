@@ -40,11 +40,11 @@ func outline(url string) error {
 }
 
 //!+forEachNode
-// forEachNode calls the functions pre(x) and post(x) for each node
-// x in the tree rooted at n. Both functions are optional.
-// pre is called before the children are visited (preorder) and
-// post is called after (postorder).
-func forEachNode(n *html.Node, pre, post func(n *html.Node)) {
+// forEachNode calls the functions pre(x) and post(x) for each node forEAchNode调用pre（x）和post(x)遍历以n为根的树中的每个节点x
+// x in the tree rooted at n. Both functions are optional.两个函数时可选的
+// pre is called before the children are visited (preorder) and pre在子节点前被访问
+// post is called after (postorder).post在访问后被调用
+func forEachNode(n *html.Node, pre, post func(n *html.Node)) {//pre,post两个函数作为了参数
 	if pre != nil {
 		pre(n)
 	}

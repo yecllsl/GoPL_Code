@@ -11,12 +11,12 @@ import "math"
 
 type Point struct{ X, Y float64 }
 
-// traditional function
+// traditional function普通的函数
 func Distance(p, q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
 
-// same thing, but as a method of the Point type
+// same thing, but as a method of the Point type  point类型的方法
 func (p Point) Distance(q Point) float64 {
 	return math.Hypot(q.X-p.X, q.Y-p.Y)
 }
@@ -26,9 +26,11 @@ func (p Point) Distance(q Point) float64 {
 //!+path
 
 // A Path is a journey connecting the points with straight lines.
+//Path是连接多个点的直线段
 type Path []Point
 
 // Distance returns the distance traveled along the path.
+//Distance返回路径的长度
 func (path Path) Distance() float64 {
 	sum := 0.0
 	for i := range path {

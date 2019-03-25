@@ -48,7 +48,7 @@ func main() {
 }
 
 // findLinks performs an HTTP GET request for url, parses the
-// response as HTML, and extracts and returns the links.
+// response as HTML, and extracts and returns the links.发起http的Get请求，计息返回的HTML页面，并返回所有链接。
 func findLinks(url string) ([]string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
@@ -59,7 +59,7 @@ func findLinks(url string) ([]string, error) {
 		return nil, fmt.Errorf("getting %s: %s", url, resp.Status)
 	}
 	doc, err := html.Parse(resp.Body)
-	resp.Body.Close()
+	resp.Body.Close()//要确保resp.Body正确关闭，否则会连接耗尽
 	if err != nil {
 		return nil, fmt.Errorf("parsing %s as HTML: %v", url, err)
 	}

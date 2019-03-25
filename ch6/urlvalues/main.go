@@ -10,11 +10,11 @@ package main
 //!+values
 package url
 
-// Values maps a string key to a list of values.
+// Values maps a string key to a list of values.映射字符串到字符串列表
 type Values map[string][]string
 
-// Get returns the first value associated with the given key,
-// or "" if there are none.
+// Get returns the first value associated with the given key,Get返回第一个具有给定Key的值
+// or "" if there are none.如不存在，则返回空字符串。
 func (v Values) Get(key string) string {
 	if vs := v[key]; len(vs) > 0 {
 		return vs[0]
@@ -37,7 +37,7 @@ import (
 
 func main() {
 	//!+main
-	m := url.Values{"lang": {"en"}} // direct construction
+	m := url.Values{"lang": {"en"}} // direct construction直接构造
 	m.Add("item", "1")
 	m.Add("item", "2")
 
@@ -48,6 +48,6 @@ func main() {
 
 	m = nil
 	fmt.Println(m.Get("item")) // ""
-	m.Add("item", "3")         // panic: assignment to entry in nil map
+	m.Add("item", "3")         // panic: assignment to entry in nil map。宕机：赋值给空的map类型。
 	//!-main
 }

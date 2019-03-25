@@ -16,7 +16,7 @@ import "image/color"
 
 type Point struct{ X, Y float64 }
 
-type ColoredPoint struct {
+type ColoredPoint struct { //结构体 内嵌 组成类型
 	Point
 	Color color.RGBA
 }
@@ -49,7 +49,7 @@ func main() {
 
 /*
 //!+error
-	p.Distance(q) // compile error: cannot use q (ColoredPoint) as Point
+	p.Distance(q) // compile error: cannot use q (ColoredPoint) as Point 编译错误：不能将q（ColoredPoint）转换为Point类型。
 //!-error
 */
 

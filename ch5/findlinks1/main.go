@@ -5,6 +5,7 @@
 //!+main
 
 // Findlinks1 prints the links in an HTML document read from standard input.
+//输出从标准输入文件中读入的HTML文档中的所有链接
 package main
 
 import (

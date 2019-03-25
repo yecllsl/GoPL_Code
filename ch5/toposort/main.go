@@ -12,7 +12,7 @@ import (
 )
 
 //!+table
-// prereqs maps computer science courses to their prerequisites.
+// prereqs maps computer science courses to their prerequisites.反映了所有课程和先决课程的关系
 var prereqs = map[string][]string{
 	"algorithms": {"data structures"},
 	"calculus":   {"linear algebra"},
@@ -44,7 +44,7 @@ func main() {
 func topoSort(m map[string][]string) []string {
 	var order []string
 	seen := make(map[string]bool)
-	var visitAll func(items []string)
+	var visitAll func(items []string)//匿名函数需要递归，必须先声明一个变量然后将匿名函数付给这个变量，若将两步合并成一个声明，则达不到这个效果。
 
 	visitAll = func(items []string) {
 		for _, item := range items {

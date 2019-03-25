@@ -4,7 +4,7 @@
 // See page 138.
 //!+Extract
 
-// Package links provides a link-extraction function.
+// Package links provides a link-extraction function.这个包提供了解析链接的函数
 package links
 
 import (
